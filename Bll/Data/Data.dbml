@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ArchivoCostos" Class="DataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=ArchivoCostos;Integrated Security=True" SettingsObjectName="Bll.Properties.Settings" SettingsPropertyName="ArchivoCostosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CostoEntrado" Member="CostoEntrado">
+    <Type Name="CostoEntrado">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="referencia1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="nombppto" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="orden" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="Nliqu" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="codterc" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="cap" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="nombrecap" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="apu" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="nombapu" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="unidad" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="cantent" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="vlrunitentrado" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="costoentrado" Member="costoentrado1" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdFecha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Salidas" Member="Salidas">
+    <Type Name="Salidas">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="referencia" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="liquidacion" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="valeconsumo" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="salida" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="tiposa" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="codcapi" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="codunita" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="codinsum" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="insumo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="cant" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="costsali" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="saliobse" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="saliusua" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdFecha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CostosPorFechas" Member="CostosPorFechas">
+    <Type Name="CostosPorFechas">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="refe" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="referencia2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="referencia3" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="presupuesto" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codcapi" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="capitulo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codunit" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="unitario" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="undunita" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="cantxppto" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="codinsu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="insutipo" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="insumo" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="unidinsu" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ctrlinven" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="validación" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="precioppto" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="consumounitario" Type="System.Decimal" DbType="Decimal(20,3)" CanBeNull="true" />
+      <Column Name="consumototal" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="adic" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="precioaut" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="PrecioCompra" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="PrecioEntrado" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="Ped" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="aprob" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="comp" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="ent" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="sali" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="traslado" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="xcomp" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="xent" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="saldoxunit" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="SaldoXppto" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="vlrEnt" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="vlrEnttraslado" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="VlrCompradoxent" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="vlrxcomp" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="VlrTraslado" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="vlrproy" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="vlrproyejec" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="Vlrini" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="vlrejec" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="IdFecha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Fechas" Member="Fechas">
+    <Type Name="Fechas">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Proyecto" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ordenes" Member="Ordenes">
+    <Type Name="Ordenes">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Referencia1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Presupuesto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Cod_Unit" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Unitario" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Cod_Insumo" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Insumo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Und" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="Comp" Type="System.Decimal" DbType="Decimal(18,8)" CanBeNull="true" />
+      <Column Name="Ent" Type="System.Decimal" DbType="Decimal(18,8)" CanBeNull="true" />
+      <Column Name="PorEnt" Type="System.Decimal" DbType="Decimal(19,8)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Orden" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="Tipo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Column Name="Cod_Prov" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="Proveedor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="VlrUnita" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="CostEnt" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="Usuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="IdFecha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pedidos" Member="Pedidos">
+    <Type Name="Pedidos">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="referencia1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="codcapi" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="codunit" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="codinsu" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="fecha" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="pedido" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="ped" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="aprob" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="comp" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="xgenorden" Type="System.Decimal" DbType="Decimal(20,2)" CanBeNull="true" />
+      <Column Name="orden" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="usuario" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="IdFecha" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.UltimaFechaInsertada" Method="UltimaFechaInsertada">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.InsertarFechas" Method="InsertarFechas">
+    <Parameter Name="Proyecto" Parameter="proyecto" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="Tipo" Parameter="tipo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="mjs" Type="System.String" DbType="VarChar(60)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
