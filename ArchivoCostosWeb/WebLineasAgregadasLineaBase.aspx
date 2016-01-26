@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebLineasAgregadasLineaBase.aspx.cs" Inherits="ArchivoCostosWeb.WebLineasAgregadas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="WebLineasAgregadasLineaBase.aspx.cs" Inherits="ArchivoCostosWeb.WebLineasAgregadasLineaBase" %>
 
 <!DOCTYPE html>
 

@@ -10,7 +10,7 @@
 namespace ArchivoCostosWeb {
     
     
-    public partial class WebLineasAgregadas {
+    public partial class WebLineasAgregadasLineaBase {
         
         /// <summary>
         /// form1 control.
