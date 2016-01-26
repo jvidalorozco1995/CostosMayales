@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>ArchivoCostos</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{18ff9040-ea60-464d-a666-6209f967cc7e}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql110DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>ArchivoCostos</RootNamespace>
+    <AssemblyName>ArchivoCostos</AssemblyName>
+    <ModelCollation>3082,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>Modern_Spanish_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- VS10 without SP1 will not have VisualStudioVersion set, so do that here -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <!-- Default to the v10.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Views\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Meses.sql" />
+    <Build Include="dbo\Tables\Areas.sql" />
+    <Build Include="dbo\Tables\CapitulosExcluir.sql" />
+    <Build Include="dbo\Tables\CapitulosIncluir.sql" />
+    <Build Include="dbo\Tables\CostoEntrado.sql" />
+    <Build Include="dbo\Tables\CostoEntradoTemp.sql" />
+    <Build Include="dbo\Tables\CostosPptoProg.sql" />
+    <Build Include="dbo\Tables\CostosPptoProgSemanaActual.sql" />
+    <Build Include="dbo\Tables\CostosPptoProgSemanaLineaBase.sql" />
+    <Build Include="dbo\Tables\CostosPptoProgSemanaPasada.sql" />
+    <Build Include="dbo\Tables\tablaprueba1.sql" />
+    <Build Include="dbo\Tables\CostosPptoProgTemp.sql" />
+    <Build Include="dbo\Tables\tablaprueba2.sql" />
+    <Build Include="dbo\Tables\ParametrizacionGrupos.sql" />
+    <Build Include="dbo\Tables\Estados.sql" />
+    <Build Include="dbo\Tables\Fechas.sql" />
+    <Build Include="dbo\Tables\Filtros.sql" />
+    <Build Include="dbo\Tables\InsumosExlcuir.sql" />
+    <Build Include="dbo\Tables\InsumosIncluir.sql" />
+    <Build Include="dbo\Tables\Ordenes.sql" />
+    <Build Include="dbo\Tables\OrdenesTemp.sql" />
+    <Build Include="dbo\Tables\ParametrizacionExcluida.sql" />
+    <Build Include="dbo\Tables\ParametrizacionIncluida.sql" />
+    <Build Include="dbo\Tables\Pedidos.sql" />
+    <Build Include="dbo\Tables\PedidosTemp.sql" />
+    <Build Include="dbo\Tables\Proyectos.sql" />
+    <Build Include="dbo\Tables\Referencias.sql" />
+    <Build Include="dbo\Tables\Salidas.sql" />
+    <Build Include="dbo\Tables\SalidasTemp.sql" />
+    <Build Include="dbo\Tables\Tipos.sql" />
+    <Build Include="dbo\Tables\Error.sql" />
+    <Build Include="dbo\Tables\UnitariosExluir.sql" />
+    <Build Include="dbo\Tables\UnitariosIncluir.sql" />
+    <Build Include="dbo\Tables\Valida.sql" />
+    <Build Include="dbo\Views\VistaPromedioValorUnitarioOrdenesTemp.sql" />
+    <Build Include="dbo\Views\VistaSalidaSalidasTemp.sql" />
+    <Build Include="dbo\Views\VistaTransladoSalidasTemp.sql" />
+    <Build Include="dbo\Views\VistaValorPromedioEntradoCostoEntradoTemp.sql" />
+    <Build Include="dbo\Views\VistaHCostosPptoProgTemp.sql" />
+    <Build Include="dbo\Views\VistaSaldoPptoVistaHValorEntradoCostosPptoProgTemp.sql" />
+    <Build Include="dbo\Views\VistaValorPromedioSalidaSalidasTemp.sql" />
+    <Build Include="dbo\Views\VistaHola.sql" />
+    <Build Include="dbo\Views\VistaHhastaValorTraslado.sql" />
+    <Build Include="dbo\Views\VistaLaGranVistaVistaHhastaValorEntrado.sql" />
+    <Build Include="dbo\Views\VistaCostosPptoProgSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaDetalleCostosDirectosSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosDirectosSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaDetalleCostosIndirectosSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaConsolidadoCostosIndirectosSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaDetalleCostosIndirectosSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaConsolidadoCostosIndirectosSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosIndirectosTotalizadoSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaConsolidadoCostosIndirectosApartamentosSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaRestasSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosIndirectosViviendasSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaConsolidadoCostosIndirectosApartamentosSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosIndirectosTotalizadoSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaRestasSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosIndirectosViviendasSemanaLineaBase.sql" />
+    <Build Include="dbo\Views\VistaCostosPptoProgSemanaActual.sql" />
+    <Build Include="dbo\Views\VistaDetalleCostosIndirectos.sql" />
+    <Build Include="dbo\Views\VistaDetalleCostosDirectosDesordenado.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosIndirectosTotalizado.sql" />
+    <Build Include="dbo\Views\VistaConsolidadoCostosIndirectos.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosDirectos.sql" />
+    <Build Include="dbo\Views\VistaConsolidadoCostosDirectosInactiva.sql" />
+    <Build Include="dbo\Views\VistaParaSacarGlobal.sql" />
+    <Build Include="dbo\Views\VistaConsolidadoCostosIndirectosApartamentos.sql" />
+    <Build Include="dbo\Views\VistaRestas.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosIndirectosViviendas.sql" />
+    <Build Include="dbo\Views\VistaTotalAreasProyectos.sql" />
+    <Build Include="dbo\Views\VistaTotalProyecto.sql" />
+    <Build Include="dbo\Views\TotalProyecto.sql" />
+    <Build Include="dbo\Views\VistaCostosPptoProg.sql" />
+    <Build Include="dbo\Views\VistaPruebitas.sql" />
+    <Build Include="dbo\Views\VistaDetalleCostosDirectos.sql" />
+    <Build Include="dbo\Views\VistaAreasProyectosAreas.sql" />
+    <Build Include="dbo\Views\VistaCostosPptoProgSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaDetalleCostosDirectosSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaGruposCostosDirectosSemanaPasada.sql" />
+    <Build Include="dbo\Views\VistaAprobadoPedidosTemp.sql" />
+    <Build Include="dbo\Views\VistaCompradoOrdenesTemp.sql" />
+    <Build Include="dbo\Views\VistaEntradoCostoEntradoTemp.sql" />
+    <Build Include="dbo\Views\VistaPedidoPedidosTemp.sql" />
+    <Build Include="dbo\Functions\FuncionFechasObra.sql" />
+    <Build Include="dbo\Functions\VistaGruposCostosIndirectosActivo.sql" />
+    <Build Include="dbo\Functions\VistaGruposCostosIndirectosActivoSemanaLineaBase.sql" />
+    <Build Include="dbo\Functions\VistaGruposCostosIndirectosActivoSemanaPasada.sql" />
+    <Build Include="dbo\Functions\VistaConsolidadoCostosDirectosSemanaPasada.sql" />
+    <Build Include="dbo\Functions\VistaConsolidadoCostosDirectosSemanaLineaBase.sql" />
+    <Build Include="dbo\Functions\VistaProyecciondeGastosGenerales.sql" />
+    <Build Include="dbo\Functions\VistaConsolidadoCostosDirectos.sql" />
+    <Build Include="dbo\Stored Procedures\ActualizarClasificacion.sql" />
+    <Build Include="dbo\Stored Procedures\ActualizarCostosFecha.sql" />
+    <Build Include="dbo\Stored Procedures\BorraParametrosCapInsUni.sql" />
+    <Build Include="dbo\Stored Procedures\BorrarAreas.sql" />
+    <Build Include="dbo\Stored Procedures\BorrarParametrizacion.sql" />
+    <Build Include="dbo\Stored Procedures\BorrarParametrizacionCapitulos.sql" />
+    <Build Include="dbo\Stored Procedures\ComparacionesModificaciones.sql" />
+    <Build Include="dbo\Stored Procedures\ComparacionesModificacionesGRUPOS.sql" />
+    <Build Include="dbo\Stored Procedures\ComparacionesModificacionesGRUPOSLINEABASE.sql" />
+    <Build Include="dbo\Stored Procedures\CopiarTablaCostosPptoProg.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarCapituloExcluir.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarCapituloIncluir.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarCostosFecha.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarInsumoExcluir.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarInsumoIncluir.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarReferencia.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarReferencias.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarUnitarioExcluir.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarUnitarioIncluir.sql" />
+    <Build Include="dbo\Stored Procedures\ExisteCapituloExcluir.sql" />
+    <Build Include="dbo\Stored Procedures\ExisteParametrizacion.sql" />
+    <Build Include="dbo\Stored Procedures\FechasObra.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarCapitulosExcluir.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarCapitulosIncluir.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarFechaEstado.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarFechas.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarInsumosExcluir.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarInsumosIncluir.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarParametrizacionExcluida.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarParametrizacionIncluida.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarReferencias.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarTodosCapitulos.sql" />
+    <Build Include="dbo\Stored Procedures\Parametri.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarTodosInsumos.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarTodosLosUnitarios.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarEstados.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarUnitarioExcluir.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarUnitarioIncluir.sql" />
+    <Build Include="dbo\Stored Procedures\MinimaFechaEstados.sql" />
+    <Build Include="dbo\Stored Procedures\ParametrizacionCapitulo.sql" />
+    <Build Include="dbo\Stored Procedures\RetornaFiltro.sql" />
+    <Build Include="dbo\Stored Procedures\TodasLasReferencias.sql" />
+    <Build Include="dbo\Stored Procedures\UltimaFechaInsertada.sql" />
+    <Build Include="dbo\Stored Procedures\VaciarTablasTemporales.sql" />
+    <Build Include="dbo\Stored Procedures\VaciarTablasTemporalesSemanas.sql" />
+    <Build Include="dbo\Stored Procedures\ValidarFechas.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarError.sql" />
+    <Build Include="dbo\Stored Procedures\ValidarSiHayRegistros.sql" />
+    <Build Include="dbo\Stored Procedures\VistaGruposCostosIndirectos.sql" />
+    <Build Include="dbo\Stored Procedures\AgrupacionTodoslosCapitulos.sql" />
+    <Build Include="dbo\Stored Procedures\AgrupacionTodoslosUnitarios.sql" />
+    <Build Include="dbo\Stored Procedures\AgrupacionTodoslosInsumos.sql" />
+    <Build Include="dbo\Stored Procedures\InsertarParametrizacionGrupos.sql" />
+    <Build Include="dbo\Stored Procedures\ExisteParametrizacionGrupos.sql" />
+    <Build Include="dbo\Stored Procedures\EliminarParametrizacionGrupos.sql" />
+  </ItemGroup>
+</Project>
