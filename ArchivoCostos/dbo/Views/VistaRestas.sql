@@ -1,20 +1,20 @@
 ﻿CREATE VIEW dbo.VistaRestas
 AS
-SELECT        (SELECT        vlrproy
+SELECT        (SELECT        SUM(vlrproy) AS Expr1
                           FROM            dbo.VistaGruposCostosIndirectosTotalizado) - ISNULL
                              ((SELECT        VlrProy
                                  FROM            dbo.VistaConsolidadoCostosIndirectosApartamentos), 0) AS vlrproy,
-                             (SELECT        vlrcausado
+                             (SELECT        SUM(vlrcausado) AS Expr1
                                FROM            dbo.VistaGruposCostosIndirectosTotalizado AS VistaGruposCostosIndirectosTotalizado_2) - ISNULL
                              ((SELECT        Vlrcausado
                                  FROM            dbo.VistaConsolidadoCostosIndirectosApartamentos AS VistaConsolidadoCostosIndirectosApartamentos_2), 0) AS vlrcausado,
-                             (SELECT        vlrejecutado
+                             (SELECT        SUM(vlrejecutado) AS Expr1
                                FROM            dbo.VistaGruposCostosIndirectosTotalizado AS VistaGruposCostosIndirectosTotalizado_1) - ISNULL
                              ((SELECT        vlrejecutado
                                  FROM            dbo.VistaConsolidadoCostosIndirectosApartamentos AS VistaConsolidadoCostosIndirectosApartamentos_1), 0) AS vlrejecutado,
-                             (SELECT        Area
+                             (SELECT        TOP (1) Area
                                FROM            dbo.VistaGruposCostosIndirectosTotalizado AS VistaGruposCostosIndirectosTotalizado_4) AS area,
-                             (SELECT        Nviviendas
+                             (SELECT        TOP (1) Nviviendas
                                FROM            dbo.VistaGruposCostosIndirectosTotalizado AS VistaGruposCostosIndirectosTotalizado_3) AS Nviviendas
 
 GO
@@ -96,6 +96,17 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
    End
    Begin CriteriaPane = 
       Begin ColumnWidths = 11
@@ -116,6 +127,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'VistaRestas';
+
+
 
 
 GO
