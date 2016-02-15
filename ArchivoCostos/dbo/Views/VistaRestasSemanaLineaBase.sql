@@ -1,20 +1,20 @@
 ﻿CREATE VIEW dbo.VistaRestasSemanaLineaBase
 AS
-SELECT        (SELECT        vlrproy
+SELECT        (SELECT        SUM(vlrproy) AS Expr1
                           FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaLineaBase) - ISNULL
                              ((SELECT        VlrProy
                                  FROM            dbo.VistaConsolidadoCostosIndirectosApartamentosSemanaLineaBase), 0) AS vlrproy,
-                             (SELECT        vlrcausado
+                             (SELECT        SUM(vlrcausado) AS Expr1
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaLineaBase AS VistaGruposCostosIndirectosTotalizadoSemanaLineaBase_2) - ISNULL
                              ((SELECT        Vlrcausado
                                  FROM            dbo.VistaConsolidadoCostosIndirectosApartamentosSemanaLineaBase AS VistaConsolidadoCostosIndirectosApartamentosSemanaLineaBase_2), 0) AS vlrcausado,
-                             (SELECT        vlrejecutado
+                             (SELECT        SUM(vlrejecutado) AS Expr1
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaLineaBase AS VistaGruposCostosIndirectosTotalizadoSemanaLineaBase_1) - ISNULL
-                             ((SELECT        vlrejecutado
+                             ((SELECT        SUM(vlrejecutado) AS Expr1
                                  FROM            dbo.VistaConsolidadoCostosIndirectosApartamentosSemanaLineaBase AS VistaConsolidadoCostosIndirectosApartamentosSemanaLineaBase_1), 0) AS vlrejecutado,
-                             (SELECT        Area
+                             (SELECT        TOP (1) Area
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaLineaBase AS VistaGruposCostosIndirectosTotalizadoSemanaLineaBase_4) AS area,
-                             (SELECT        Nviviendas
+                             (SELECT        TOP (1) Nviviendas
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaLineaBase AS VistaGruposCostosIndirectosTotalizadoSemanaLineaBase_3) AS Nviviendas
 
 GO

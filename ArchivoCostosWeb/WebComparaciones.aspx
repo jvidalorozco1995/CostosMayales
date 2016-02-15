@@ -439,7 +439,7 @@
                       </div>
 
 
-      <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ArchivoCostosConnectionString %>" SelectCommand="SELECT * FROM [Vistadepruebaporfavoreliminamecuandotermines]"></asp:SqlDataSource>
+          <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ArchivoCostosConnectionString %>" SelectCommand="SELECT * FROM [Vistadepruebaporfavoreliminamecuandotermines]"></asp:SqlDataSource>
             
                
 

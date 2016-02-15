@@ -42,6 +42,9 @@ namespace ArchivoCostos
                 {
                     Response.Redirect("Login.aspx");
                 }
+
+                Label1.Text = Session["SemanaActualInforme"].ToString() +" - "+Session["SemanaPasadaInforme"].ToString() ;
+
                 CargarGrilla.DataBind();
                 SqlDataSource1.DataBind();
                 SqlDataSource2.DataBind();

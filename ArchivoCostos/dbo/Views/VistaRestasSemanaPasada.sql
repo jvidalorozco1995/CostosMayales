@@ -1,20 +1,20 @@
-﻿CREATE VIEW [dbo].[VistaRestasSemanaPasada]
+﻿CREATE VIEW dbo.VistaRestasSemanaPasada
 AS
-SELECT        (SELECT        vlrproy
+SELECT        (SELECT        SUM(vlrproy) AS Expr1
                           FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaPasada) -
                              (SELECT        VlrProy
                                FROM            dbo.VistaConsolidadoCostosIndirectosApartamentosSemanaPasada) AS vlrproy,
-                             (SELECT        vlrcausado
+                             (SELECT        SUM(vlrcausado) AS Expr1
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaPasada AS VistaGruposCostosIndirectosTotalizadoSemanaPasada_2) -
                              (SELECT        Vlrcausado
                                FROM            dbo.VistaConsolidadoCostosIndirectosApartamentosSemanaPasada AS VistaConsolidadoCostosIndirectosApartamentosSemanaPasada_2) AS vlrcausado,
-                             (SELECT        vlrejecutado
+                             (SELECT        SUM(vlrejecutado) AS Expr1
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaPasada AS VistaGruposCostosIndirectosTotalizadoSemanaPasada_1) -
                              (SELECT        vlrejecutado
                                FROM            dbo.VistaConsolidadoCostosIndirectosApartamentosSemanaPasada AS VistaConsolidadoCostosIndirectosApartamentosSemanaPasada_1) AS vlrejecutado,
-                             (SELECT        Area
+                             (SELECT        TOP (1) Area
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaPasada AS VistaGruposCostosIndirectosTotalizadoSemanaPasada_4) AS area,
-                             (SELECT        Nviviendas
+                             (SELECT        TOP (1) Nviviendas
                                FROM            dbo.VistaGruposCostosIndirectosTotalizadoSemanaPasada AS VistaGruposCostosIndirectosTotalizadoSemanaPasada_3) AS Nviviendas
 
 
@@ -97,6 +97,17 @@ Begin DesignProperties =
    Begin DataPane = 
       Begin ParameterDefaults = ""
       End
+      Begin ColumnWidths = 9
+         Width = 284
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+         Width = 1500
+      End
    End
    Begin CriteriaPane = 
       Begin ColumnWidths = 11
@@ -117,6 +128,8 @@ Begin DesignProperties =
    End
 End
 ', @level0type = N'SCHEMA', @level0name = N'dbo', @level1type = N'VIEW', @level1name = N'VistaRestasSemanaPasada';
+
+
 
 
 GO
